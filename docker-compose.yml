@@ -20,14 +20,16 @@ services:
     db:
         image: mysql:5.7
         container_name: nano-db
-        restart: always
+        restart: unless-stopped
         tty: true
+        command: [--ignore-db-dir=lost+found]
         ports:
             - 3306:3306
         expose:
             - 3306
         volumes:
-            - ./docker-compose/mysql/data:/var/lib/mysql
+            - dbdata:/var/lib/mysql
+            - ./docker-compose/mysql/my.cnf:/etc/mysql/my.cnf
         environment:
             MYSQL_DATABASE: ${DB_DATABASE}
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
@@ -53,3 +55,7 @@ services:
 networks:
     nano-network:
         driver: bridge
+
+volumes:
+    dbdata:
+        driver: local
