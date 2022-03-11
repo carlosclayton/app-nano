@@ -143,6 +143,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-cs-fixer/diff" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-parallel-lint/php-parallel-lint" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/breeze" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tightenco/ziggy" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/inertiajs/inertia-laravel" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
