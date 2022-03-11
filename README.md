@@ -22,6 +22,14 @@ Rode o composer para instalar as bibliotecas:
 
 Rode o artisan para configurar o ambiente:
 > $ php artisan key:generate
+
 > $ php artisan migrate --seed
 
 Para testar, acesse http://localhost:8080
+
+
+## Qualidade de código
+
+Rode o artisan para verificar a qualidade do código:
+> $ php artisan insights
+
