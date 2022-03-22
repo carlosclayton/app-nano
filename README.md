@@ -37,5 +37,8 @@ Para testar, acesse http://localhost:8080
 Rode o artisan para verificar a qualidade do código:
 > $ php artisan insights
 
+Rode o artisan para testar o código:
+> vendor/bin/phpunit --testdox
+
 
 

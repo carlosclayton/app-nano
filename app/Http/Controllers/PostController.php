@@ -50,6 +50,19 @@ class PostController extends Controller
      *
      * @return Response
      */
+    public function show(Request $request)
+    {
+        if ($request->has('id')) {
+            $post = $this->service->get($request->input('id'));
+            return Inertia::render('Posts', ['data' => $post]);
+        }
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
     public function update(Request $request)
     {
         Validator::make($request->all(), [

@@ -10,6 +10,10 @@ class RegistrationTest extends TestCase
 {
     use RefreshDatabase;
 
+    /**
+     * @test
+     * @testdox test registration screen can be rendered
+     */
     public function test_registration_screen_can_be_rendered()
     {
         $response = $this->get('/register');
@@ -17,6 +21,10 @@ class RegistrationTest extends TestCase
         $response->assertStatus(200);
     }
 
+    /**
+     * @test
+     * @testdox test new users can register
+     */
     public function test_new_users_can_register()
     {
         $response = $this->post('/register', [

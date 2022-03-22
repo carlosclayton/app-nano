@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ServiceProvider;
 use Inertia\Inertia;
+use Laravel\Dusk\DuskServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,11 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\Interface\PostRepositoryInterface',
             'App\Repositories\Eloquent\PostRepositoryEloquent'
         );
+
+        if ($this->app->environment('local', 'testing')) {
+            $this->app->register(DuskServiceProvider::class);
+        }
+
 
     }
 
